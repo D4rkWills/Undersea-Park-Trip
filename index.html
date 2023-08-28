@@ -15,17 +15,30 @@
         <img id="logo" src="undersea-logo.png" />
         <div id="business_name">Park Trip</div>
 
-
         <button id="show_slide">Mostrar Slide</button>
+      </div>
+
+      <div id="slide_box">
+        <button id="close_slide_box">x</button>
+
+        <div id="img_list">
+          <img id="s1" src="imgs/slide3.png" />
+          <img id="s2" src="imgs/slide1.png" />
+          <img id="s3" src="imgs/slide2.png" />
+        </div>
+        
       </div>
     </div>
   </body>
 
   <script src="main.js"></script>
-  <script>
-    const imgs = document.querySelector("img"); // todas as imagens do documento
 
-    // colocar todas as imagem para .draggable = false
+  <script>
+    const imgs = document.querySelectorAll("img"); // todas as imagens do documento
+
+    imgs.forEach(img => { // impede que imagens sejam arrastadas
+      img.draggable = false;
+    });
     
   </script>
 </html>

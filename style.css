@@ -6,9 +6,15 @@
 
 body {
   background: #FDFDFD;
+
+  overflow: hidden;
 }
 
 img {
+  user-select: none;
+}
+
+button {
   user-select: none;
 }
 
@@ -85,4 +91,82 @@ div#business_name {
 
 button#show_slide {
   margin-top: 60px;
+}
+
+div#slide_box {
+  position: absolute;
+  opacity: 0;
+
+  visibility: hidden;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  transition: opacity 0.4s;
+}
+
+div#slide_box button#close_slide_box {
+  background: none;
+  border: none;
+  border-radius: 5px;
+
+  padding: 5px;
+  padding-top: 0px;
+  padding-bottom: 3px;
+
+  left: 96.5%;
+  top: 10px;
+
+  font-size: 25px;
+  font-family: Arial;
+  font-style: sans-serif;
+
+  color: white;
+
+  z-index: 2;
+
+  transition: 0.08s;
+}
+
+div#slide_box div#img_list {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+div#slide_box div#img_list img {
+  width: auto;
+  height: auto;
+
+  border: 2px solid white;
+
+  margin-left: 50px;
+  margin-right: 50px;
+
+  max-width: 60%;
+}
+
+div#slide_box div#img_list:first-child {
+  left: 0px;
+}
+
+div#slide_box button#close_slide_box:hover {
+  color: #CDCDCD;
+}
+
+div#slide_box button#close_slide_box:active {
+  color: white;
+  background: rgba(150, 150, 150, 0.4);
 }
