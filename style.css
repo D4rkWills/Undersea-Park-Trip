@@ -115,12 +115,12 @@ div#slide_box {
 
 div#slide_box button#close_slide_box {
   background: none;
+
   border: none;
   border-radius: 5px;
 
-  padding: 5px;
-  padding-top: 0px;
-  padding-bottom: 3px;
+  padding-left: 7px;
+  padding-right: 7px;
 
   left: 96.5%;
   top: 10px;
@@ -158,14 +158,41 @@ div#slide_box div#img_list img {
 
   border: 2px solid white;
 
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-top: 65px;
 
-  max-width: 60%;
+  margin-left: 60px;
+  margin-right: 60px;
+
+  max-width: 50%;
+
+  transition: max-width 0.1s, left 0.4s, opacity 0.4s;
 }
 
-div#slide_box div#img_list:first-child {
-  left: 0px;
+div#slide_box div#img_list div.img_tag {
+  position: absolute;
+
+  color: white;
+
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 25px;
+  text-decoration: underline;
+
+  top: 11%;
+
+  user-select: none;
+}
+
+div#slide_box div#img_list div.first_img_tag {
+  left: 10px;
+}
+
+div#slide_box div#img_list div.last_img_tag {
+  left: 98%;
+}
+
+div#slide_box div#img_list img#s2 {
+  max-width: 60%;
 }
 
 div#slide_box button#close_slide_box:hover {
