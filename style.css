@@ -32,6 +32,32 @@ div#interface {
   height: 100vh;
 }
 
+.website_msg {
+  position: absolute;
+
+  left: 0px;
+  top: 0px;
+
+  margin: 10px;
+
+  font-family: Calibri;
+  color: rgba(100, 100, 100, 0.8);
+  font-size: 14pt;
+  font-weight: bolder;
+}
+
+#weblink {
+  top: 20px;
+  color: rgba(100, 100, 100, 0.6);
+  font-size: 12pt;
+}
+
+#follow_us {
+  top: 40px;
+  color: rgba(100, 100, 100, 0.6);
+  font-size: 12pt;
+}
+
 div#center_box {
   display: flex;
   flex-direction: column;
@@ -42,7 +68,7 @@ div#center_box {
   width: 350px;
   height: 500px;
 
-  margin: 40px;
+  margin: 100px;
 
   padding: 10px;
   border: 5px solid #cdcdcd;
@@ -59,6 +85,8 @@ div#center_box button {
   font-family: Arial;
   font-style: sans-serif;
   font-size: 20px;
+
+  margin-bottom: 15px;
 
   border: none;
   border-radius: 5px;
@@ -111,10 +139,14 @@ div#slide_box {
   background: rgba(0, 0, 0, 0.6);
 
   transition: opacity 0.4s;
+
+  z-index: 2;
 }
 
-div#slide_box button#close_slide_box {
+div#interface .close_session {
   background: none;
+
+  position: absolute;
 
   border: none;
   border-radius: 5px;
@@ -176,6 +208,7 @@ div#slide_box div#img_list div.img_tag {
   font-weight: bold;
   font-family: Arial;
   font-size: 25px;
+  font-style: sans-serif;
   text-decoration: underline;
 
   top: 11%;
@@ -188,18 +221,185 @@ div#slide_box div#img_list div.first_img_tag {
 }
 
 div#slide_box div#img_list div.last_img_tag {
-  left: 98%;
+  left: 97.5%;
 }
 
 div#slide_box div#img_list img#s2 {
   max-width: 60%;
 }
 
-div#slide_box button#close_slide_box:hover {
+div#interface .close_session:hover {
   color: #CDCDCD;
 }
 
-div#slide_box button#close_slide_box:active {
+div#interface .close_session:active {
   color: white;
   background: rgba(150, 150, 150, 0.4);
+}
+
+div#day_grade {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity 0.4s;
+
+  visibility: hidden;
+  opacity: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.3);
+}
+
+div#day_grade .grade {
+  margin: 40px;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+
+  font-family: calibri;
+  font-style: sans-serif;
+  font-size: 12pt;
+
+  height: 250px;
+  overflow: hidden;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  border-radius: 4px;
+
+  color: white;
+}
+
+div#day_grade .grade .title {
+  margin-bottom: 15px;
+}
+
+div#day_grade .grade .title::after {
+  position: absolute;
+
+  content: " ";
+
+  background: white;
+
+  top: 20px;
+  left: -42px;
+
+  width: 120px;
+  height: 2px;
+}
+
+div#day_grade .grade .content {
+  overflow-y: scroll;
+
+  left: 25%;
+
+  width: 150%;
+}
+
+div#day_grade .grade .content p {
+  margin-bottom: 6px;
+}
+
+
+div#day_grade .grade .content .hour {
+  margin-right: 8px;
+  color: #DFDFDF;
+}
+
+div#day_grade #pack_name, div#day_grade #sub_pack_name {
+  position: absolute;
+
+  font-family: Arial;
+  font-style: sans-serif;
+  font-size: 16pt;
+
+  color: white;
+
+  top: 30px;
+}
+
+div#day_grade #pack_name {
+  font-weight: bold;
+}
+
+@keyframes PUSH_UP {
+  0% {
+    transform: rotate(-10DEG);
+    font-size: 16pt;
+  }
+
+  50% {
+    transform: rotate(4DEG);
+    font-size: 14pt;
+  }
+
+  100% {
+    transform: rotate(-10DEG);
+    font-size: 16pt;
+  }
+}
+
+div#day_grade #sub_pack_name {
+  top: 52px;
+  left: 48%;
+
+  font-size: 14pt;
+  transform: rotate(-5DEG);
+
+  transition: 0.2s;
+
+  animation: PUSH_UP 0.7s linear infinite;
+}
+
+div#day_grade #alert {
+  position: absolute;
+
+  font-family: Calibri;
+  font-style: sans-serif;
+  font-size: 16pt;
+
+  top: 95%;
+  left: 10px;
+
+  color: rgba(240, 240, 240, 1);
+}
+
+div#messages, #slogan {
+  position: absolute;
+
+  top: 120px;
+  left: 20px;
+}
+
+div#messages span {
+  color: rgba(80, 80, 80, 1);
+  margin-bottom: 4px;
+}
+
+#slogan {
+  top: 220px;
+
+  font-size: 14pt;
+  font-style: sans-serif;
+  font-family: Arial;
+  font-weight: bold;
+
+  color: #333333;
+}
+
+#slog {
+  color: #FAFAFA;
+  font-weight: bolder;
+  font-size: 16pt;
+
+  text-shadow: 0px 0px 3px #7F7F7F;
+  -webkit-text-stroke: 0.4px #7F7F7F;
 }

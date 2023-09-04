@@ -1,4 +1,5 @@
 const slide_box = document.querySelector("div#slide_box"); // a box dos slides
+const day_grade = document.querySelector("div#day_grade"); // a box de horários
 const img_list = document.querySelector("div#img_list"); // o elemento que contém as imagens
 
 const slides = document.querySelectorAll("div#img_list img"); // os slides
@@ -7,18 +8,21 @@ const slide_tags = document.querySelectorAll("div#img_list div.img_tag"); // as 
 const show_slide_bnt = document.querySelector("button#show_slide"); // o botão que mostra o slide
 const hide_slide_bnt = document.querySelector("button#close_slide_box"); // botão que esconde o slide
 
-///////////////////////////////////////////////////////////////////////////////
-
-
-const img_id = [3, 1, 2];
-
+const close_day_grade_bnt = document.querySelector("button#close_day_grade"); // o botão que esconde a grade de horários
+const show_day_grade_bnt = document.querySelector("button#show_day_grade"); // o botão que exibe a janela de horários
 
 ///////////////////////////////////////////////////////////////////////////////
 
-function show_slide(visibility) { // faz aparecer os slides (true se devem aparecer)
-    slide_box.style.opacity = visibility? 1 : 0;
 
-    setTimeout(() => slide_box.style.visibility = visibility? "visible" : "hidden", visibility? 0 : 400);
+const img_id = [18, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+function show_session(target, visibility) { // faz aparecer os slides (true se devem aparecer)
+    target.style.opacity = visibility? 1 : 0;
+
+    setTimeout(() => target.style.visibility = visibility? "visible" : "hidden", visibility? 0 : 400);
 }
 
 function nextSlide(dir) { // passa para o próximo slide
@@ -47,7 +51,7 @@ function nextSlide(dir) { // passa para o próximo slide
 
     setTimeout(() => {
         slides.forEach((slide, i) => {
-            slide.src = "imgs/slide" + img_id[i].toString() + ".png";
+            slide.src = "imgs/" + img_id[i].toString() + ".png";
             slide_tags[i].innerHTML = img_id[i].toString();
         });
     }, 400);
@@ -70,13 +74,16 @@ function nextSlide(dir) { // passa para o próximo slide
 
 // eventos
 
-show_slide_bnt.addEventListener("click", () => show_slide(true)); // atribui o evento show slide false ao botão
-hide_slide_bnt.addEventListener("click", () => show_slide(false)); // atribui o evento show sllide true ao botão
+show_slide_bnt.addEventListener("click", () => show_session(slide_box, true)); // atribui o evento show slide false ao botão
+hide_slide_bnt.addEventListener("click", () => show_session(slide_box, false)); // atribui o evento show sllide true ao botão
 
-img_list.addEventListener("click", event => {
+close_day_grade_bnt.addEventListener("click", () => show_session(day_grade, false)); // atribui o evento hide grade
+show_day_grade_bnt.addEventListener("click", () => show_session(day_grade, true)); // atribui o evento show grade
+
+img_list.addEventListener("click", event => { // atribui o evento click ao slide box
     if (event.x > img_list.clientWidth / 2) { // animação para a esquerda
         nextSlide("right");
     } else { // para a direita
         nextSlide("left");
     }
-}); // atribui o evento click ao slide box
+});
