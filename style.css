@@ -311,6 +311,15 @@ div#day_grade .grade .content {
   width: 150%;
 }
 
+div#day_grade .grade .content::after {
+  content: "";
+
+  position: absolute;
+
+  height: 80px;
+  width: 100%;
+}
+
 div#day_grade .grade .content p {
   margin-bottom: 6px;
 }
