@@ -30,7 +30,7 @@ div#interface {
 
   overflow: hidden;
 
-  width: auto;
+  width: 100vw;
   height: 100vh;
 
   padding: 40px;
